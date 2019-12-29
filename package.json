@@ -1,0 +1,56 @@
+{
+    "name": "jump-to-last-cursor",
+    "displayName": "Jump To Last Cursor",
+    "description": "go to last cursor with shift+escape",
+    "version": "0.0.1",
+    "publisher": "ctf0",
+    "repository": "https://github.com/ctf0/vscode-jump-to-last-cursor",
+    "engines": {
+        "vscode": "^1.41.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:jumpTo.lastCursor"
+    ],
+    "main": "./extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "jumpTo.lastCursor",
+                "title": "Jump To Last Cursor"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "jumpTo.lastCursor",
+                "key": "shift+escape",
+                "mac": "shift+escape",
+                "when": "editorHasMultipleSelections && textInputFocus"
+            }
+        ],
+        "menus": {
+            "commandPalette": [
+                {
+                    "command": "jumpTo.lastCursor",
+                    "when": "editorHasMultipleSelections && textInputFocus"
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "test": "node ./test/runTest.js"
+    },
+    "devDependencies": {
+        "@types/glob": "^7.1.1",
+        "@types/mocha": "^5.2.7",
+        "@types/node": "^12.11.7",
+        "@types/vscode": "^1.41.0",
+        "eslint": "^6.6.0",
+        "glob": "^7.1.5",
+        "mocha": "^6.2.2",
+        "typescript": "^3.6.4",
+        "vscode-test": "^1.2.2"
+    }
+}
